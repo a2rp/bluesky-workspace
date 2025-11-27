@@ -1,0 +1,108 @@
+/* src/index.css */
+@import "./theme.css";
+
+/* ===== Reset ===== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+}
+
+/* ===== Base body / typography ===== */
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px; /* a bit larger for clean workspace UI */
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+/* Subtle text selection with BlueSky accent */
+::selection {
+    background: var(--accent-soft);
+    color: var(--color-heading);
+}
+
+/* Scrollbar – simple, theme-aware */
+body::-webkit-scrollbar {
+    width: 8px;
+}
+body::-webkit-scrollbar-track {
+    background: transparent;
+}
+body::-webkit-scrollbar-thumb {
+    background: var(--accent-border);
+    border-radius: 999px;
+}
+
+/* Headings */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Antonio", sans-serif;
+    color: var(--color-heading);
+    margin-top: 0;
+    letter-spacing: 0.03em; /* sharp corporate headings */
+}
+
+/* Basic anchor defaults */
+
+a {
+    color: var(--link);
+    text-decoration: none;
+}
+a:hover {
+    color: var(--link-hover);
+    text-decoration: underline;
+}
+
+/* Basic select, theme-aware */
+
+select {
+    font-family: inherit;
+    font-size: 13px;
+    color: var(--color-text);
+    background: var(--color-card-soft);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    padding: 8px 32px 8px 12px;
+    box-shadow: 0 0 0 1px transparent;
+    outline: none;
+    transition: background-color 0.16s ease-out, border-color 0.16s ease-out,
+        box-shadow 0.16s ease-out, color 0.16s ease-out;
+    appearance: auto;
+    -webkit-appearance: auto;
+    -moz-appearance: auto;
+}
+
+select:hover {
+    background: var(--color-card);
+    border-color: var(--accent);
+}
+
+select:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    box-shadow: 0 0 0 1px var(--accent-soft);
+}
+
+select option {
+    background: var(--color-card);
+    color: var(--color-text);
+}

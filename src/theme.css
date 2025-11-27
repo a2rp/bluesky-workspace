@@ -1,0 +1,61 @@
+/* src/theme.css */
+
+/* ===== Core dark theme (default) – BlueSky night workspace ===== */
+:root {
+    --color-bg: #050814; /* deep navy – night office */
+    --color-text: #c2cedd; /* soft cool gray-blue */
+    --color-heading: #f5f7fb; /* clean near-white */
+
+    /* Borders */
+    --color-border: #182234; /* subtle cool border */
+    --color-border-soft: #101624; /* very soft separators */
+    --color-border-strong: #23324a; /* stronger frames / panels */
+
+    /* Surfaces */
+    --color-card: #081120; /* elevated panel */
+    --color-card-soft: #0e1828; /* hover / soft strip */
+
+    /* Accent – BlueSky primary */
+    --accent: #3da9ff; /* bright sky blue accent */
+    --accent-soft: rgba(61, 169, 255, 0.12);
+    --accent-border: rgba(61, 169, 255, 0.5);
+
+    /* Links */
+    --link: #7ec3ff;
+    --link-hover: #d2ecff;
+
+    /* Shadows – dark theme */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.55);
+    --shadow-md: 0 10px 28px rgba(1, 6, 22, 0.8);
+    --shadow-lg: 0 22px 55px rgba(0, 0, 0, 0.9);
+}
+
+/* ===== Light theme – BlueSky daylight workspace ===== */
+html[data-theme="light"] {
+    --color-bg: #f4f7fc; /* soft cool white */
+    --color-text: #1f2933; /* neutral dark slate */
+    --color-heading: #0b1120; /* strong heading */
+
+    /* Borders */
+    --color-border: #d2d9e6; /* soft cool border */
+    --color-border-soft: #e3e8f3; /* very light separators */
+    --color-border-strong: #bcc7dd; /* frames / cards */
+
+    /* Surfaces */
+    --color-card: #ffffff; /* clean card */
+    --color-card-soft: #edf1fb; /* subtle tinted panel */
+
+    /* Accent – deeper blue for contrast */
+    --accent: #2563eb; /* primary workspace blue */
+    --accent-soft: rgba(37, 99, 235, 0.12);
+    --accent-border: rgba(37, 99, 235, 0.55);
+
+    /* Links */
+    --link: #1d4ed8;
+    --link-hover: #0f3fb5;
+
+    /* Shadows – light theme */
+    --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.1);
+    --shadow-md: 0 10px 30px rgba(15, 23, 42, 0.16);
+    --shadow-lg: 0 24px 60px rgba(15, 23, 42, 0.2);
+}

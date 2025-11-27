@@ -1,0 +1,30 @@
+{
+    "sections": [
+        {
+            "id": "main",
+            "label": "",
+            "children": [
+                {
+                    "label": "Home",
+                    "path": "/home"
+                },
+                {
+                    "label": "Services",
+                    "path": "/services"
+                },
+                {
+                    "label": "Pricing",
+                    "path": "/pricing"
+                },
+                {
+                    "label": "Projects",
+                    "path": "/projects"
+                },
+                {
+                    "label": "Contact",
+                    "path": "/contact"
+                }
+            ]
+        }
+    ]
+}
