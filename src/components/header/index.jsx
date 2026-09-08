@@ -3,11 +3,10 @@ import { Styled } from "./styled";
 import { IoIosMenu } from "react-icons/io";
 import { FiSun, FiMoon } from "react-icons/fi";
 import { NavLink } from "react-router-dom";
-import logo from "/images/logo.png";
 
 const THEME_KEY = "bluesky-workspace-theme"; // only for UI theme
 
-const Header = ({ displayDrawer, setDisplayDrawer, handleHamburgerClick }) => {
+const Header = ({ handleHamburgerClick }) => {
     const [isLight, setIsLight] = useState(() => {
         if (typeof window === "undefined") return false;
 
@@ -16,7 +15,7 @@ const Header = ({ displayDrawer, setDisplayDrawer, handleHamburgerClick }) => {
             const stored = window.localStorage.getItem(THEME_KEY);
             if (stored === "light") return true;
             if (stored === "dark") return false;
-        } catch (err) {
+        } catch {
             // ignore storage errors
         }
 
@@ -40,7 +39,7 @@ const Header = ({ displayDrawer, setDisplayDrawer, handleHamburgerClick }) => {
         // persist choice
         try {
             window.localStorage.setItem(THEME_KEY, isLight ? "light" : "dark");
-        } catch (err) {
+        } catch {
             // ignore storage failures
         }
     }, [isLight]);

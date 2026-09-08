@@ -1,48 +1,43 @@
-# BlueSky Workspace Solutions – Modern Office Workspace Website
+# BlueSky Workspace Solutions
 
-![alt text](image.png)
+A polished React and Vite brochure website for managed offices, flexible workspaces, and team-focused workplace planning.
 
-![alt text](image-1.png)
+![BlueSky Workspace preview](image.png)
 
-![alt text](image-2.png)
+![BlueSky Workspace screenshot](screenshot.png)
 
-![alt text](image-3.png)
+## Features
 
-![alt text](image-4.png)
+- Responsive workspace-focused landing pages
+- Services, pricing, projects, and contact routes
+- Lazy-loaded routes with pathname-aware loading state
+- Light and dark themes with saved preference
+- Mobile drawer navigation
+- GitHub Pages deployment
 
-A calm, premium brochure website for **BlueSky Workspace Solutions**,
-showcasing modern office workspace formats, services, pricing, and real-world project stories.  
-Built with a dark–light theme, clean typography, and simple navigation for teams exploring managed workspaces.
-
----
-
-## 🌐 Live Demo
-
-Live site (GitHub Pages):
-
-**https://a2rp.github.io/bluesky-workspace**
-
----
-
-## 📦 Repository
-
-GitHub repo:
-
-**https://github.com/a2rp/bluesky-workspace**
-
-To clone this project:
+## Run locally
 
 ```bash
-# Clone the repository
-git clone https://github.com/a2rp/bluesky-workspace.git
-cd bluesky-workspace
-
-# Install dependencies
 npm install
-
-# Start the dev server
 npm run dev
-
-# Open the URL shown in the terminal (usually):
-http://localhost:5173
 ```
+
+Build with `npm run build` and deploy with `npm run deploy`.
+
+## Links
+
+- Live: https://a2rp.github.io/bluesky-workspace/
+- Repository: https://github.com/a2rp/bluesky-workspace
+- Portfolio: https://www.ashishranjan.net/
+- GitHub: https://github.com/a2rp
+- CodePen: https://codepen.io/ash1198
+- LinkedIn: https://www.linkedin.com/in/aashishranjan
+- Facebook: https://www.facebook.com/theash.ashish/
+- YouTube: https://www.youtube.com/@ashishranjan-ashz?sub_confirmation=1
+- Email: mailto:ash.ranjan09@gmail.com
+
+## Support
+
+- Support: https://a2rp-donation-page.netlify.app/
+- Buy Me a Coffee: https://buymeacoffee.com/a2rp
+- Patreon: https://www.patreon.com/a2rp
