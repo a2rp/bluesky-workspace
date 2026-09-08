@@ -1,4 +1,4 @@
-import{d as o,r as l,j as e,F as d,N as a,a as i,b as c,c as p,e as x,f as m,g as h,h as g,i as u,k as f,l as s}from"./index-DXdF140q.js";const r={PageWrap:o.main`
+import{g as o,r as l,j as e,F as d,N as a,a as i,b as c,c as p,d as x,e as m,f as h,h as g,i as u,k as f,l as s}from"./index-CgKltyxS.js";const r={PageWrap:o.main`
         padding: 90px 16px 40px;
         background: var(--color-bg);
         color: var(--color-text);
