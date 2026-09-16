@@ -1,4 +1,4 @@
-import{g as r,H as n,j as e,I as t,J as s,N as i,K as l,L as d}from"./index-CgKltyxS.js";const o={PageWrap:r.main`
+import{g as r,H as n,j as e,I as t,J as s,N as i,K as l,L as d}from"./index-uj-DcZM4.js";const o={PageWrap:r.main`
         padding: 90px 16px 40px;
         background: var(--color-bg);
         color: var(--color-text);
