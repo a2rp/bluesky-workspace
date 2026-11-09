@@ -19,6 +19,30 @@ body,
     color: var(--color-text);
 }
 
+.routeLoader {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    background: var(--color-bg);
+}
+
+.routeLoader span {
+    width: 36px;
+    height: 36px;
+    border: 3px solid var(--color-border);
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    animation: routeLoaderSpin 0.8s linear infinite;
+}
+
+@keyframes routeLoaderSpin {
+    to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .routeLoader span { animation-duration: 2s; }
+}
+
 /* ===== Base body / typography ===== */
 
 body {

@@ -23,8 +23,7 @@ import {
     FiList,
 } from "react-icons/fi";
 
-const fallbackImg =
-    "https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200&auto=format&fit=crop";
+const fallbackImg = `${import.meta.env.BASE_URL}images/workspace-fallback.svg`;
 
 const servicesData = [
     {

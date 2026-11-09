@@ -1,9 +1,7 @@
 // src/AppRoutes.jsx
-import { Box, CircularProgress } from "@mui/material";
 import { lazy, Suspense } from "react";
 import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 
-// For now, all pages use placeholder component
 const Home = lazy(() => import("./pages/home"));
 const Services = lazy(() => import("./pages/services"));
 const Pricing = lazy(() => import("./pages/pricing"));
@@ -16,20 +14,7 @@ export default function AppRoutes() {
 
     return (
         <Suspense
-            fallback={
-                <Box
-                    sx={{
-                        width: "100vw",
-                        height: "100vh",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        background: "var(--color-bg)",
-                    }}
-                >
-                    <CircularProgress sx={{ color: "var(--color-heading)" }} />
-                </Box>
-            }
+            fallback={<div className="routeLoader" role="status" aria-label="Loading page"><span /></div>}
         >
             <Routes location={location} key={location.pathname}>
                 {/* Redirect root to /home */}

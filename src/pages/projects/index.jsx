@@ -13,8 +13,7 @@ import {
     FiBriefcase,
 } from "react-icons/fi";
 
-const fallbackImg =
-    "https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200&auto=format&fit=crop";
+const fallbackImg = `${import.meta.env.BASE_URL}images/workspace-fallback.svg`;
 
 const filters = [
     { id: "all", label: "All projects" },
@@ -161,9 +160,9 @@ const Projects = () => {
                         </Styled.MetaRow>
 
                         <Styled.InfoNote>
-                            We&apos;ve anonymised names and exact floor-plans
-                            here, but kept the real use-cases, constraints, and
-                            outcomes so you can imagine your own project.
+                            These illustrative scenarios use sample companies
+                            and outcomes to show the page layout. They are not
+                            client case studies or references.
                         </Styled.InfoNote>
                     </Styled.HeaderMetaCard>
                 </Styled.HeaderSection>

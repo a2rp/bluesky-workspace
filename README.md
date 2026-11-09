@@ -1,6 +1,6 @@
 # BlueSky Workspace Solutions
 
-A polished React and Vite brochure website for managed offices, flexible workspaces, and team-focused workplace planning.
+A React and Vite concept site for a managed-workspace brand, with illustrative service, project, and pricing pages. The contact form validates locally but does not send or store enquiries.
 
 ![BlueSky Workspace preview](image.png)
 
@@ -16,6 +16,8 @@ A polished React and Vite brochure website for managed offices, flexible workspa
 - GitHub Pages deployment
 
 ## Run locally
+
+Requires Node.js 20.19 or newer.
 
 ```bash
 npm install

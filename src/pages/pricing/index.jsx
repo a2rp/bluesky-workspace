@@ -164,7 +164,8 @@ const Pricing = () => {
                             Start small or move your entire team – with BlueSky
                             you only pay for the seats and services you actually
                             use, while we handle the space, amenities, and
-                            day-to-day operations.
+                            day-to-day operations. Prices on this concept page
+                            are examples, not a live offer or quote.
                         </Styled.Subtitle>
 
                         <Styled.MetaRow>

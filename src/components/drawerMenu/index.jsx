@@ -1,4 +1,4 @@
-import React, { useMemo, useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { Styled } from "./styled";
 
@@ -19,6 +19,8 @@ import {
 } from "react-icons/fi";
 
 import linksConfig from "../../links.json";
+
+const sections = linksConfig.sections || [];
 
 function getSectionIcon(id) {
     const map = {
@@ -160,67 +162,27 @@ function findBestMatch(sections, currentPath) {
 
 export default function DrawerMenu({ onNavigate }) {
     const location = useLocation();
-
-    const [openSections, setOpenSections] = useState(() => new Set());
-    const [openItems, setOpenItems] = useState(() => new Set());
-    const [activeKey, setActiveKey] = useState(null);
-
-    const sections = useMemo(() => linksConfig.sections || [], []);
-
+    const bestMatch = findBestMatch(sections, location.pathname);
+    const [openSections, setOpenSections] = useState(() => {
+        const opened = new Set();
+        if (bestMatch.sectionId) opened.add(bestMatch.sectionId);
+        else if (sections[0]) opened.add(sections[0].id);
+        return opened;
+    });
+    const [openItems, setOpenItems] = useState(() => {
+        const opened = new Set();
+        let chainKey = bestMatch.parentKey;
+        while (chainKey) {
+            opened.add(chainKey);
+            const parts = chainKey.split("|");
+            if (parts.length <= 1) break;
+            parts.pop();
+            chainKey = parts.join("|");
+        }
+        return opened;
+    });
+    const activeKey = bestMatch.score < 0 ? null : bestMatch.key;
     const activeItemRef = useRef(null);
-    const initialisedRef = useRef(false);
-
-    // FIRST LOAD ONLY
-    useEffect(() => {
-        if (sections.length === 0) return;
-        if (initialisedRef.current) return;
-
-        const currentPath = location.pathname;
-        const bestMatch = findBestMatch(sections, currentPath);
-
-        if (!bestMatch.key || bestMatch.score < 0) {
-            if (sections[0]) {
-                setOpenSections(new Set([sections[0].id]));
-            }
-            setOpenItems(new Set());
-            setActiveKey(null);
-        } else {
-            const nextOpenSections = new Set();
-            const nextOpenItems = new Set();
-
-            if (bestMatch.sectionId) {
-                nextOpenSections.add(bestMatch.sectionId);
-            }
-
-            let chainKey = bestMatch.parentKey;
-            while (chainKey) {
-                nextOpenItems.add(chainKey);
-                const parts = chainKey.split("|");
-                if (parts.length <= 1) break;
-                parts.pop();
-                chainKey = parts.join("|");
-            }
-
-            setOpenSections(nextOpenSections);
-            setOpenItems(nextOpenItems);
-            setActiveKey(bestMatch.key);
-        }
-
-        initialisedRef.current = true;
-    }, [sections, location.pathname]);
-
-    // EVERY ROUTE CHANGE
-    useEffect(() => {
-        if (sections.length === 0) return;
-
-        const bestMatch = findBestMatch(sections, location.pathname);
-
-        if (!bestMatch.key || bestMatch.score < 0) {
-            setActiveKey(null);
-        } else {
-            setActiveKey(bestMatch.key);
-        }
-    }, [sections, location.pathname]);
 
     // Scroll active item into view
     useEffect(() => {

@@ -44,7 +44,8 @@ const Home = () => {
                             BlueSky designs and runs calm, modern workspaces for
                             growing teams – from a handful of dedicated desks
                             to multi-floor managed offices. Your team brings the
-                            work; we shape the floor around it.
+                            work; we shape the floor around it. This concept
+                            site uses sample project stories and pricing.
                         </Styled.HeroSubtitle>
 
                         <Styled.HeroActions>
@@ -58,7 +59,7 @@ const Home = () => {
                             <NavLink to="/contact">
                                 <Styled.SecondaryBtn type="button">
                                     <FiPhoneCall />
-                                    <span>Talk to a workspace specialist</span>
+                                    <span>Preview contact form</span>
                                 </Styled.SecondaryBtn>
                             </NavLink>
                         </Styled.HeroActions>

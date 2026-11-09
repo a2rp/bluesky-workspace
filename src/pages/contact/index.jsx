@@ -14,8 +14,7 @@ import {
     FiMessageCircle,
 } from "react-icons/fi";
 
-const fallbackImg =
-    "https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200&auto=format&fit=crop";
+const fallbackImg = `${import.meta.env.BASE_URL}images/workspace-fallback.svg`;
 
 const Contact = () => {
     const [form, setForm] = useState({
@@ -46,7 +45,7 @@ const Contact = () => {
 
         if (!form.name.trim()) nextErrors.name = "Please share your name.";
         if (!form.email.trim()) {
-            nextErrors.email = "We use this to reply to you.";
+            nextErrors.email = "Enter a valid email address for this demo.";
         } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.trim())) {
             nextErrors.email = "This doesn’t look like a valid email.";
         }
@@ -81,17 +80,16 @@ const Contact = () => {
                     <Styled.HeaderText>
                         <Styled.Overline>
                             <FiMessageCircle />
-                            Talk to the BlueSky team
+                            BlueSky contact form demo
                         </Styled.Overline>
                         <Styled.PageTitle>
                             Share how your team works today, and what a better
                             workspace would feel like.
                         </Styled.PageTitle>
                         <Styled.Subtitle>
-                            Whether you&apos;re exploring a single project
-                            room, a managed floor, or a phased multi-city plan,
-                            this form lands directly with our workspace
-                            specialists.
+                            Try the workspace enquiry form. It validates your
+                            entries in this browser, but doesn&apos;t send or
+                            store your details.
                         </Styled.Subtitle>
                     </Styled.HeaderText>
 
@@ -102,9 +100,9 @@ const Contact = () => {
                                     <FiMail />
                                 </div>
                                 <div className="text">
-                                    <span className="label">Email us</span>
+                                    <span className="label">Inbox</span>
                                     <span className="value">
-                                        hello@blueskyworkspace.com
+                                        No email inbox is connected
                                     </span>
                                 </div>
                             </Styled.InfoRow>
@@ -115,11 +113,10 @@ const Contact = () => {
                                 </div>
                                 <div className="text">
                                     <span className="label">
-                                        Weekday workspace line
+                                        Phone
                                     </span>
                                     <span className="value">
-                                        +91 80 0000 0000 &nbsp;· &nbsp;
-                                        9:30am – 7:00pm
+                                        No phone line is connected
                                     </span>
                                 </div>
                             </Styled.InfoRow>
@@ -130,11 +127,10 @@ const Contact = () => {
                                 </div>
                                 <div className="text">
                                     <span className="label">
-                                        Showcase centre
+                                        Location example
                                     </span>
                                     <span className="value">
-                                        BlueSky Floor, Business District,
-                                        Bengaluru
+                                        Illustrative Bengaluru location
                                     </span>
                                 </div>
                             </Styled.InfoRow>
@@ -145,10 +141,10 @@ const Contact = () => {
                                 </div>
                                 <div className="text">
                                     <span className="label">
-                                        Preferred visit slots
+                                        Availability example
                                     </span>
                                     <span className="value">
-                                        Weekdays · 11:00am, 3:00pm, 5:30pm
+                                        Sample slots only
                                     </span>
                                 </div>
                             </Styled.InfoRow>
@@ -166,13 +162,12 @@ const Contact = () => {
                                 </span>
                                 <div className="text">
                                     <span className="title">
-                                        Thanks – your note is with us now.
+                                        Form preview complete; nothing was sent.
                                     </span>
                                     <span className="body">
-                                        A BlueSky workspace specialist will
-                                        typically reply within one business day
-                                        with a short, non-pushy email and a
-                                        couple of starting options.
+                                        Your entries passed client-side
+                                        validation. Connect a backend or mail
+                                        service to receive real enquiries.
                                     </span>
                                 </div>
                             </Styled.SuccessBanner>
@@ -319,12 +314,11 @@ const Contact = () => {
                             <Styled.FormFooter>
                                 <Styled.SubmitBtn type="submit">
                                     <FiSend />
-                                    <span>Send this to BlueSky</span>
+                                    <span>Preview submission</span>
                                 </Styled.SubmitBtn>
                                 <Styled.PrivacyNote>
-                                    We don&apos;t add you to any mailing lists.
-                                    Expect one concise reply, and you decide the
-                                    next step.
+                                    Demo only: details are not sent, saved, or
+                                    added to a mailing list.
                                 </Styled.PrivacyNote>
                             </Styled.FormFooter>
                         </Styled.Form>
@@ -339,16 +333,15 @@ const Contact = () => {
                                 onError={onImgError}
                             />
                             <Styled.ImageCaption>
-                                A typical BlueSky floor: focus pods, quiet
-                                desks, collaboration corners – all fully
-                                managed so your team can simply plug in and
-                                work.
+                                Illustrative workspace image; no real BlueSky
+                                office is represented.
                             </Styled.ImageCaption>
                         </Styled.ImageCard>
 
                         <Styled.QuickList>
                             <Styled.QuickTitle>
-                                Before we talk, it helps if you know:
+                                For a real workspace enquiry, connect this
+                                form to an inbox or backend first.
                             </Styled.QuickTitle>
                             <ul>
                                 <li>
