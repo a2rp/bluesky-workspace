@@ -1,5 +1,6 @@
 // src/pages/services/index.jsx
 import React, { useCallback, useMemo, useState } from "react";
+import { NavLink } from "react-router-dom";
 import { Styled } from "./styled";
 import {
     FiSearch,
@@ -368,20 +369,23 @@ const Services = () => {
                         </Styled.BadgeRow>
 
                         <Styled.Actions>
-                            <Styled.PrimaryBtn type="button">
+                            <Styled.PrimaryBtn
+                                as={NavLink}
+                                to="/contact?interest=workspace%20advisor%20conversation"
+                            >
                                 <span className="icon">
                                     <FiPhoneCall />
                                 </span>
-                                <span>Talk to a workspace advisor</span>
+                                <span>Preview an enquiry</span>
                                 <span className="tail">
                                     <FiArrowRightCircle />
                                 </span>
                             </Styled.PrimaryBtn>
-                            <Styled.GhostBtn type="button">
+                            <Styled.GhostBtn as={NavLink} to="/projects">
                                 <span className="icon">
                                     <FiBriefcase />
                                 </span>
-                                <span>Download sample layout deck</span>
+                                <span>View sample layouts</span>
                             </Styled.GhostBtn>
                         </Styled.Actions>
                     </Styled.TitleBlock>
@@ -513,9 +517,12 @@ const Services = () => {
                                     requirements and we&apos;ll suggest a
                                     starting configuration.
                                 </p>
-                                <Styled.PrimaryBtn type="button">
+                                <Styled.PrimaryBtn
+                                    as={NavLink}
+                                    to="/contact?interest=workspace%20requirements"
+                                >
                                     <FiPhoneCall />
-                                    <span>Share requirements with BlueSky</span>
+                                    <span>Open enquiry form</span>
                                 </Styled.PrimaryBtn>
                             </Styled.EmptyState>
                         ) : viewMode === "cards" ? (
@@ -620,7 +627,10 @@ const Services = () => {
                                                 <Styled.CardFootNote>
                                                     {service.sla}
                                                 </Styled.CardFootNote>
-                                                <Styled.CardAction type="button">
+                                                <Styled.CardAction
+                                                    as={NavLink}
+                                                    to={`/contact?interest=${encodeURIComponent(service.label)}`}
+                                                >
                                                     <span>
                                                         Add this format to my
                                                         workspace plan

@@ -1,5 +1,6 @@
 // src/pages/pricing/index.jsx
 import React, { useMemo, useState } from "react";
+import { NavLink } from "react-router-dom";
 import { Styled } from "./styled";
 import {
     FiTag,
@@ -113,6 +114,14 @@ const plans = [
         ],
     },
 ];
+
+const getPlanShareLink = (plan) => {
+    const subject = encodeURIComponent(`${plan.name} workspace plan`);
+    const body = encodeURIComponent(
+        `I'm looking at the ${plan.name} workspace plan on the BlueSky Workspace concept site.\n\n${plan.description}\n\nExample pricing: ${plan.displayPrice} ${plan.unitLabel}.`
+    );
+    return `mailto:?subject=${subject}&body=${body}`;
+};
 
 const allIncluded = [
     "High-speed Wi-Fi and power-backup supported zones",
@@ -342,7 +351,10 @@ const Pricing = () => {
                                 </Styled.ExtrasList>
 
                                 <Styled.PlanActionRow>
-                                    <Styled.PrimaryBtn type="button">
+                                    <Styled.PrimaryBtn
+                                        as={NavLink}
+                                        to={`/contact?interest=${encodeURIComponent(`${plan.name} plan`)}`}
+                                    >
                                         {plan.id === "enterprise" ? (
                                             <>
                                                 <FiBriefcase />
@@ -361,9 +373,12 @@ const Pricing = () => {
                                         )}
                                     </Styled.PrimaryBtn>
 
-                                    <Styled.SecondaryLink type="button">
+                                    <Styled.SecondaryLink
+                                        as="a"
+                                        href={getPlanShareLink(plan)}
+                                    >
                                         <FiHelpCircle />
-                                        <span>Share this plan by email</span>
+                                        <span>Email this plan</span>
                                     </Styled.SecondaryLink>
                                 </Styled.PlanActionRow>
                             </Styled.PlanCard>

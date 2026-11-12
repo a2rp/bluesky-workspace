@@ -1,5 +1,6 @@
 // src/pages/projects/index.jsx
 import React, { useCallback, useMemo, useState } from "react";
+import { NavLink } from "react-router-dom";
 import { Styled } from "./styled";
 import {
     FiLayers,
@@ -260,7 +261,10 @@ const Projects = () => {
                                 </Styled.ImpactBlock>
 
                                 <Styled.CardFooter>
-                                    <Styled.PrimaryBtn type="button">
+                                    <Styled.PrimaryBtn
+                                        as={NavLink}
+                                        to={`/contact?interest=${encodeURIComponent(`a layout like ${project.name}`)}`}
+                                    >
                                         <FiArrowRightCircle />
                                         <span>
                                             Imagine a similar layout for my

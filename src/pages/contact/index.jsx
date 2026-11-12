@@ -16,6 +16,15 @@ import {
 
 const fallbackImg = `${import.meta.env.BASE_URL}images/workspace-fallback.svg`;
 
+const getInitialMessage = () => {
+    if (typeof window === "undefined") return "";
+
+    const interest = new URLSearchParams(window.location.search).get("interest");
+    return interest
+        ? `I'm interested in ${interest}. Please share more details.`
+        : "";
+};
+
 const Contact = () => {
     const [form, setForm] = useState({
         name: "",
@@ -23,7 +32,7 @@ const Contact = () => {
         company: "",
         teamSize: "",
         topic: "visit",
-        message: "",
+        message: getInitialMessage(),
     });
 
     const [errors, setErrors] = useState({});
